@@ -11,7 +11,15 @@ function SortingVisualizer() {
       arr.push(randomIntFromInterval(5, 530));
     }
     setMainArray(arr);
+    resetBarColors();
   }
+
+  const resetBarColors = () => {
+    const bars = document.getElementsByClassName("array-bar");
+    for (let i = 0; i < bars.length; i++) {
+      bars[i].style.backgroundColor = "#f50057";
+    }
+  };
 
   // sort array
   const sortArray = (sortingFunction) => {
@@ -136,7 +144,7 @@ function SortingVisualizer() {
           <div
             className="array-bar"
             key={idx}
-            style={{ height: `${value}px`}}
+            style={{ height: `${value}px` }}
           />
         ))}
       </div>
